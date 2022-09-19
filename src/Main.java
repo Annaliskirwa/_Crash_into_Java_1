@@ -22,7 +22,9 @@ public class Main {
         displayRepository(repositories);
         Shopping customer1 = readUserInput();
         displayShoppingBill(customer1, repositories);
+//        calling update stock
         updateStock(customer1, repositories);
+//        calling the updated repository method
         displayUpdatedRepository(repositories);
 
     }
