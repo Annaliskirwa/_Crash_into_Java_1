@@ -1,7 +1,10 @@
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
+//    For formatting the double to two decimal places
+    private static final DecimalFormat df = new DecimalFormat("0.00");
     public static void main(String[] args) {
         Repository[] repositories = {
                 new Repository("Oranges", 10, 2.99, 500),
@@ -81,9 +84,9 @@ public class Main {
             double price = computePrice(repository[i].getGroupCount(), repository[i].getGroupPrice(), items[i]);
 //            updates the price
             total += price;
-            System.out.println(repository[i].getItemName() +"\t\t\t"+ items[i] +"\t\t\t"+ price);
+            System.out.println(repository[i].getItemName() +"\t\t\t"+ items[i] +"\t\t\t"+ df.format(price));
         }
-        String message = String.format("Total shopping cost: %.2f ", total );
+        String message = "Total shopping cost: "+ df.format(total);
         System.out.println(message);
 
     }
